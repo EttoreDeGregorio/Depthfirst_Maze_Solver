@@ -1,5 +1,5 @@
 from tkinter import Canvas, Tk, mainloop
-from maze import maze
+from maze import *
 from algorithms import depth_first
 
 path = []
@@ -7,12 +7,22 @@ a = "a"
 b = "b"
 
 def main():
-    display(a)
-    depth_first(maze, 1, 1, path)
-    display(b)
+
+    print("Quale labirinto vuoi risolvere :")
+    x = input()
+
+    if x == "1":
+        display(a, maze_1)
+        depth_first(maze_1, 1, 1, path)
+        display(b, maze_1)
+
+    elif x == "2":
+        display(a, maze_2)
+        depth_first(maze_2, 0, 3, path)
+        display(b, maze_2)
     
 
-def display(w):
+def display(w, maze):
     master = Tk()
 
     w = Canvas(master, width = 750, height = 750)
@@ -36,10 +46,13 @@ def display(w):
 
             if rec == 0:
                 color = "white"
+
             elif rec == 1:
                 color = "black"
+
             elif rec == 2:
                 color = "blue"
+                
             elif rec == 9:
                 color = "red"
 
