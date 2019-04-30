@@ -21,11 +21,16 @@ def main():
         depth_first(maze_2, 0, 3, path)
         display(b, maze_2)
     
+    elif x == "3":
+        display(a, maze_3)
+        depth_first(maze_3, 1, 2, path)
+        display(b, maze_3)
+    
 
 def display(w, maze):
     master = Tk()
 
-    w = Canvas(master, width = 750, height = 750)
+    w = Canvas(master, width = 900, height = 900)
     w.pack()
     
     x1 = 0
