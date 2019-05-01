@@ -1,6 +1,6 @@
 from tkinter import Canvas, Tk, mainloop
 from maze import *
-from algorithms import depth_first
+from algorithm import depth_first
 
 path = []
 a = "a"
@@ -8,7 +8,7 @@ b = "b"
 
 def main():
 
-    print("Quale labirinto vuoi risolvere :")
+    print("Which maze do you want to solve :")
     x = input()
 
     if x == "1":
